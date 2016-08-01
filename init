@@ -1,0 +1,12 @@
+echo Which repo do you want to clone?
+echo "(1) NodeJS boilerplate"
+echo "(2) Messenger Bot boilerplate"
+echo "(3) Exit"
+
+select yn in "1" "2" "3"; do
+  case $yn in
+    1 ) git clone https://github.com/huberf/BasicNode; mv BasicNode new-site; cd new-site; rm -rf ./.git; git init; break;;
+    2 ) git clone https://github.com/huberf/messenger-bot-boilerplate; mv messenger-bot-boilerplate new-bot; cd new-bot; rm -rf ./.git; git init; break;;
+    3 ) exit;;
+  esac
+done
