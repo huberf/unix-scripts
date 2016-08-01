@@ -3,10 +3,21 @@ echo "(1) NodeJS boilerplate"
 echo "(2) Messenger Bot boilerplate"
 echo "(3) Exit"
 
+name="new-project"
+
+if [ "$1" == "" ]; then
+  echo "No name specified. Sticking with default 'new-project'."
+else
+  echo "$1"
+  name="$1"
+fi
+
+echo "$name"
+
 select yn in "1" "2" "3"; do
   case $yn in
-    1 ) git clone https://github.com/huberf/BasicNode; mv BasicNode new-site; cd new-site; rm -rf ./.git; git init; break;;
-    2 ) git clone https://github.com/huberf/messenger-bot-boilerplate; mv messenger-bot-boilerplate new-bot; cd new-bot; rm -rf ./.git; git init; break;;
+    1 ) git clone https://github.com/huberf/BasicNode; mv BasicNode "$name"; cd "$name"; rm -rf ./.git; git init; break;;
+    2 ) git clone https://github.com/huberf/messenger-bot-boilerplate; mv messenger-bot-boilerplate "$name"; cd "$name"; rm -rf ./.git; git init; break;;
     3 ) exit;;
   esac
 done
