@@ -1,18 +1,24 @@
-echo Which repo do you want to clone?
-echo "(1) NodeJS boilerplate"
-echo "(2) Messenger Bot boilerplate"
-echo "(3) Exit"
-
 name="new-project"
 
 if [ "$1" == "" ]; then
-  echo "No name specified. Sticking with default 'new-project'."
+  echo "No name specified. Enter a project name (new-project): "
+  read newname
+  if [ "$newname" == "" ]; then
+    name="new-project"
+  else
+    name=$newname
+  fi
 else
   echo "$1"
   name="$1"
 fi
 
 echo "$name"
+
+echo Which repo do you want to clone?
+echo "(1) NodeJS boilerplate"
+echo "(2) Messenger Bot boilerplate"
+echo "(3) Exit"
 
 select yn in "1" "2" "3"; do
   case $yn in

@@ -1,0 +1,9 @@
+if [ "$1" == "-s" ]; then
+  python /Users/noah/scripts/pirateFiles/piratelist.py
+elif [ "$1" == "-a" ]; then
+  echo "$2" >> /Users/noah/docs/piratelist.txt
+elif [ "$1" == "-b" ]; then
+  python /Users/noah/scripts/pirateFiles/pirate.py $2
+else
+  echo "No command input. (i.e. -s -a -b)"
+fi
