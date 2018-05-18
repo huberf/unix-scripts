@@ -1,0 +1,1 @@
+curl http://54.149.145.79/api/v1/article?url=$1
